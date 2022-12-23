@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\SubcategoryController;
 
 
 /*
@@ -33,3 +34,12 @@ Route::post('/category/store',[CategoryController::class,'store'])->name('catego
 Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
 Route::post('/category/update/{id}',[CategoryController::class,'update'])->name('category.update');
 Route::get('/category/delete/{id}',[CategoryController::class,'destroy'])->name('category.delete');
+
+//___Subcategory route
+Route::group(['prefix'=>'subcategory'], function(){
+    Route::get('/index',[SubcategoryController::class,'index'])->name('subcategory.index');
+    Route::get('/create',[SubcategoryController::class,'create'])->name('subcategory.create');
+    Route::post('/store',[SubcategoryController::class,'store'])->name('subcategory.store');
+    Route::get('/edit/{id}',[SubcategoryController::class,'edit'])->name('subcategory.edit');
+    Route::post('/update/{id}',[SubcategoryController::class,'update'])->name('subcategory.update');
+});
