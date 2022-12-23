@@ -2,9 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Admin\ClassController;
-use App\Http\Controllers\Admin\StudentController;
-use App\Http\Controllers\Admin\SectionController;
+use App\Http\Controllers\Admin\CategoryController;
 
 
 /*
@@ -28,3 +26,10 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/password-change',[HomeController::class,'pass_change'])->name('password_change');
 Route::post('/password-update',[HomeController::class,'pass_update'])->name('password_update');
 
+//___Catgeory route
+Route::get('/category/index',[CategoryController::class,'index'])->name('category.index');
+Route::get('/category/create',[CategoryController::class,'create'])->name('category.create');
+Route::post('/category/store',[CategoryController::class,'store'])->name('category.store');
+Route::get('/category/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
+Route::post('/category/update/{id}',[CategoryController::class,'update'])->name('category.update');
+Route::get('/category/delete/{id}',[CategoryController::class,'destroy'])->name('category.delete');
