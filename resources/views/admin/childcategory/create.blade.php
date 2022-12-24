@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Create Subcategory') }}</div>
                 
                 <div class="card-body">
-                    <a href="{{ route('subcategory.index') }}" class="btn btn-info">All Childcategory</a>
+                    <a href="{{ route('childcategory.index') }}" class="btn btn-info">All Childcategory</a>
                     <br><br>
 
                     <form action="{{ route('childcategory.store') }}" method="post">

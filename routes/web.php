@@ -51,4 +51,7 @@ Route::group(['prefix'=>'childcategory'], function(){
     Route::get('/index',[ChildcategoryController::class,'index'])->name('childcategory.index');
     Route::get('/create',[ChildcategoryController::class,'create'])->name('childcategory.create');
     Route::post('/store',[ChildcategoryController::class,'store'])->name('childcategory.store');
+    Route::get('/edit/{id}',[ChildcategoryController::class,'edit'])->name('childcategory.edit');
+    Route::post('/update/{id}',[ChildcategoryController::class,'update'])->name('childcategory.update');
+    Route::get('/delete/{id}',[ChildcategoryController::class,'destroy'])->name('childcategory.delete');
 });
