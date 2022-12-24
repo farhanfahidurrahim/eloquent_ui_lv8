@@ -9,6 +9,7 @@
                 
                 <div class="card-body">
                     <a href="{{ route('subcategory.create') }}" class="btn btn-info">Add Subcategory</a>
+                    <a href="{{ route('home') }}" class="btn btn-info">Home</a>
                     <br>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">

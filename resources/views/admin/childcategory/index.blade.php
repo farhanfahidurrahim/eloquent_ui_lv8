@@ -5,10 +5,10 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Catgeory') }}</div>
+                <div class="card-header">{{ __('Childcatgeory') }}</div>
                 
                 <div class="card-body">
-                    <a href="{{ route('category.create') }}" class="btn btn-info">Add Category</a>
+                    <a href="{{ route('childcategory.create') }}" class="btn btn-danger">Add Childcategory</a>
                     <a href="{{ route('home') }}" class="btn btn-info">Home</a>
                     <br>
                     @if (session('status'))
@@ -20,20 +20,24 @@
 						<thead>
 					    	<tr>
 					      		<th scope="col">#</th>
+					      		<th scope="col">Childcategory Name</th>
+					      		<th scope="col">Subcategory Name</th>
 					      		<th scope="col">Category Name</th>
-					      		<th scope="col">Category Slug</th>
+					      		<th scope="col">Subcategory Slug</th>
 					      		<th scope="col">Action</th>
 					    	</tr>
 					  	</thead>
-					  	@foreach($cat as $key=>$row)
+					  	@foreach($data as $key=>$row)
 					  	<tbody>
 					    	<tr>
 						      	<th scope="row">{{ ++$key }}</th>
-						      	<td>{{ $row->category_name }}</td>
-						      	<td>{{ $row->category_slug }}</td>
+						      	<td>{{ $row->childcategory_name }}</td>
+						      	<td>{{ $row->subcategory->subcategory_name }}</td>
+						      	<td>{{ $row->category->category_name }}</td>
+						      	<td>{{ $row->subcategory_slug }}</td>
 						      	<td>
-						      		<a href="{{ route('category.edit',$row->id) }}" class="btn btn-primary">Edit</a>
-						      		<a href="{{ route('category.delete',$row->id) }}" class="btn btn-danger">Delete</a>
+						      		<a href="{{ route('subcategory.edit',$row->id) }}" class="btn btn-primary">Edit</a>
+						      		<a href="{{ route('subcategory.delete',$row->id) }}" class="btn btn-danger">Delete</a>
 						      	</td>
 					    	</tr>
 					  	</tbody>

@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\SubcategoryController;
+use App\Http\Controllers\Admin\ChildcategoryController;
 
 
 /*
@@ -43,4 +44,11 @@ Route::group(['prefix'=>'subcategory'], function(){
     Route::get('/edit/{id}',[SubcategoryController::class,'edit'])->name('subcategory.edit');
     Route::post('/update/{id}',[SubcategoryController::class,'update'])->name('subcategory.update');
     Route::get('/delete/{id}',[SubcategoryController::class,'destroy'])->name('subcategory.delete');
+});
+
+//___Childcategory route
+Route::group(['prefix'=>'childcategory'], function(){
+    Route::get('/index',[ChildcategoryController::class,'index'])->name('childcategory.index');
+    Route::get('/create',[ChildcategoryController::class,'create'])->name('childcategory.create');
+    Route::post('/store',[ChildcategoryController::class,'store'])->name('childcategory.store');
 });

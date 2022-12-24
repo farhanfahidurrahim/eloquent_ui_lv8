@@ -10,6 +10,7 @@
                 <div class="card-body">
                     <a href="{{ route('category.index') }}" class="btn btn-info">All Category</a>
                     <a href="{{ route('subcategory.index') }}" class="btn btn-info">All Subcategory</a>
+                    <a href="{{ route('childcategory.index') }}" class="btn btn-info">All Childcategory</a>
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
